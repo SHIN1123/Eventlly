@@ -1,0 +1,46 @@
+.event-boxes{
+  margin-top: 60px;
+  .event-box{
+    margin: 80px auto;
+    height: 350px;
+    .event-header{
+      padding-left: 30px;
+      height: 80px;
+      background-color: rgba(3, 185, 185, 0.4);
+      display: flex;
+      .event-header-left{
+        width: 90%;
+        .event-date{
+          padding-top: 5px;
+          font-size: 130%;
+        }
+        .event-genre{
+          margin-top: 10px;
+          background-color: rgba(136, 228, 228, 0.6);
+          text-align: center;
+          width: 55px;
+        }
+      }
+      .event-header-right{
+        width: 10%;
+        .event-area{
+          padding-top: 50px;
+        }
+      }
+    }
+    .event-body{
+      padding: 20px;
+      background-color: rgba(3, 185, 185, 0.6);
+      .event-title{
+        font-size: 150%;
+      }
+      .event-explanation{
+        color: #000;
+        margin-top: 10px;
+        padding: 10px;
+        height: 200px;
+        background-color: rgba(216, 226, 226, 0.6);
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+%header
+  %div.header-logo
+    = link_to "Eventlly",root_path
+  %div.header-menu
+    - if user_signed_in?
+      %ul
+        %li
+          =link_to "イベントに参加" ,posts_path
+        %li
+          = link_to "イベントを投稿" , new_post_path
+        %li.login
+          = link_to "ログアウト" , destroy_user_session_path, method: :delete
+        %li.new
+          = link_to "マイページ" ,user_path(current_user)
+    - else
+      %ul
+        %li
+          =link_to "イベントを見る" ,posts_path
+        %li.login
+          = link_to "ログイン" ,new_user_session_path
+        %li.new
+          = link_to "新規登録" ,new_user_registration_path

@@ -1,0 +1,43 @@
+.main-page{
+  margin-top: 60px;
+  .main-contents{
+    padding: 20px 0;
+    width: 70%;
+    margin: 0 auto;
+  }
+  .page{
+    text-align: center;
+    font-style: italic;
+    font-size: 25px;
+    height: 70px;
+  }
+}
+
+.hooter{
+  width: 100%;
+  background: linear-gradient(#03b9d1,#88e46a);
+  text-align: center;
+  color: white;
+}
+
+body{
+  min-height: 100vh;
+  background-image: url(https://www.movie.ac.jp/contents/column/wp-content/uploads/sites/3/2018/05/column0521_01.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: right bottom;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: ghostwhite;
+  }
+
+li{
+  list-style: none;
+}

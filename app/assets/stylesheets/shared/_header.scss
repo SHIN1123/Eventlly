@@ -1,0 +1,30 @@
+header{
+  height: 80px;
+  padding: 0 30px 0 100px;
+  background: linear-gradient(#03b9d1,#88e46a);
+  position: fixed;
+  width: 100%;
+  overflow: scroll;
+  .header-logo{
+    padding: 20px 0;
+    font-size: 150%;
+    float: left;
+  }
+  .header-menu {
+    float: right;
+    line-height: 40px;
+    ul {
+      display: flex;
+      li{
+        margin: 20px 10px;
+        border:1px solid white;
+        border-radius: 7.5px;
+        padding: 0 20px;
+      }
+      .new{
+        background-color: dimgray;
+        border:1px solid dimgray;
+      }
+    }
+  }
+}

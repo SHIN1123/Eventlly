@@ -1,0 +1,20 @@
+.wrapper
+
+  =render "shared/header"
+
+  .event
+    .new-event
+      .new-event-top
+        = "新規イベント"
+      .new-event-form
+        = form_for @post do |f|
+          .new-event-form-box
+            = f.text_field :date, placeholder: "日時を入力して下さい" 
+            = f.text_field :genre, placeholder: "ジャンルを入力して下さい" 
+            = f.text_field :area, placeholder: "都道府県を入力して下さい" 
+            = f.text_field :place, placeholder: "場所を入力して下さい" 
+            = f.text_field :title, placeholder: "タイトルを入力して下さい" 
+          .new-event-form-explanation
+            = f.text_area :explanation, placeholder: "詳細を記入して下さい" , rows: "10"
+          .new-event-form-btn
+            = f.submit '投稿'

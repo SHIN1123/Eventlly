@@ -1,0 +1,54 @@
+.wrapper
+
+  = render "shared/header"
+
+  .event-detail
+    .event-detail-option
+      - if user_signed_in? && current_user.id == @post.user_id
+        %ul
+          %li
+            = link_to "削除", post_path(@post.id), method: :delete
+          %li
+            = link_to "編集", edit_post_path(@post.id)
+    .event-detail-width
+      .event-detail-logo
+        %i.fa.fa-info-circle
+          = "イベント詳細"
+      .event-detail-top
+        .event-detail-top-content#title
+          = @post.title
+        .event-detail-top-content#date
+          %i.fa.fa-calendar
+            = @post.date
+        .event-detail-top-content#genre
+          .event-detail-top-content#genre-box
+            = @post.genre
+        .event-detail-top-content#area
+          %i.fa.fa-map-marker
+            = @post.area
+            = @post.place
+        .event-detail-top-content#explanation
+          %i.fa.fa-comment-o
+            = @post.explanation
+      .event-comments
+        .event-comments-logo
+          %i.fa.fa-comments
+            = "コメント一覧"
+        .event-comment-form
+          = form_for [@post,@comment] do |f|
+            = f.text_area :text, placeholder: 'コメントを入力して下さい'
+            .event-comment-form-btn
+              = f.submit 'コメントする'
+        .event-comment
+          - if @comments
+            - @comments.each do |comment|
+              .event-comment
+                .event-comment-flame
+                  .event-comment-header
+                    .event-comment-user-name
+                      = link_to comment.user.name, user_path(comment.user_id)
+                    .event-comment-date
+                      = comment.created_at.strftime("%Y/%m/%d(%a) %H:%M")
+                  .event-comment-body
+                    .event-comment-text
+                      = comment.text

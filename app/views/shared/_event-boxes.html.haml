@@ -1,0 +1,19 @@
+.event-boxes
+  - @posts.each do |post|
+    .event-box
+      .event-header
+        .event-header-left
+          .event-date
+            %i.fa.fa-calendar
+              = post.date
+          .event-genre
+            = post.genre
+        .event-header-right
+          .event-area
+            %i.fa.fa-map-marker
+              = post.area
+      .event-body
+        .event-title
+          =link_to post.title, post_path(post.id)
+        .event-explanation
+          = post.explanation
