@@ -2,8 +2,8 @@ class PostsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
 
   def index
+    @posts = Post.includes(:user)
     @posts = Post.order("created_at DESC").page(params[:page]).per(10)
-
   end
 
   def new
