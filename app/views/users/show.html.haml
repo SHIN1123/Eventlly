@@ -4,17 +4,17 @@
 
   .event-detail
     .event-detail-option
-        - if @user.id == current_user.id
+      - if @user.id == current_user.id
+      - else
+        - if @isRoom == true
+          %p
+            %a{:href => "/rooms/#{@roomId}"} dm画面へ
         - else
-          - if @isRoom == true
-            %p
-              %a{:href => "/rooms/#{@roomId}"} dm画面へ
-          - else
-            = form_for @room do |f|
-              = fields_for @entry do |e|
-                = e.hidden_field :user_id, :value=> @user.id
-              = f.submit "dmを送る"
-        = link_to "ユーザー一覧へ", users_path
+          = form_for @room do |f|
+            = fields_for @entry do |e|
+              = e.hidden_field :user_id, :value=> @user.id
+            = f.submit "dmを送る"
+      = link_to "ユーザー一覧へ", users_path
 
   .page-user-name
     = @name
