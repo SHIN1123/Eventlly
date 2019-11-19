@@ -30,6 +30,9 @@
         .event-detail-top-content#explanation
           %i.fa.fa-comment-o
             = @post.explanation
+        .event-detail-top-content#explanation
+          %i.fa.fa-user
+            = link_to @post.user.name,user_path(@post.user.id)
       .event-comments
         .event-comments-logo
           %i.fa.fa-comments
