@@ -11,7 +11,7 @@
         %li.login
           = link_to "ログアウト" , destroy_user_session_path, method: :delete
         %li.new
-          = link_to "マイページ" ,user_path(current_user)
+          = link_to "マイページ" ,user_path(current_user.id)
     - else
       %ul
         %li

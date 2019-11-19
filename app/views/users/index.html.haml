@@ -1,0 +1,9 @@
+.wrapper
+
+  = render "shared/header"
+
+  .user-index 
+    = "ユーザー一覧"
+  - @users.each do |u|
+    .user-name
+      = link_to u.name, user_path(u.id)
