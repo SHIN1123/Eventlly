@@ -1,0 +1,14 @@
+.wrapper
+  = render "shared/header"
+          
+  .search
+    = form_with(url: posts_searches_path, local: true, method: :get, class: "search-form") do |f|
+      .search-box
+        = f.label :label, "フリーワード"
+        = f.text_field :keyword, class: 'form-text', placeholder: 'キーワードを入力して下さい'
+      .search-btn
+        = f.submit 'この条件で検索する', class: 'form-submit'
+
+  .main-page
+    .main-contents
+      =render "shared/event-boxes"

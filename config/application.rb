@@ -16,6 +16,9 @@ module Eventactivity
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
     config.time_zone = 'Tokyo'
+    config.action_view.field_error_proc = Proc.new do |html_tag, instance| 
+      html_tag
+    end
   end
 end
 
