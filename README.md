@@ -16,7 +16,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |title|string|null: false|
-|date|string|null: false|
+|date|date|null: false|
 |area|string|null: false|
 |place|string|
 |genre|string|
@@ -28,12 +28,45 @@
 - belongs_to :user
 
 
-## commentssテーブル
+## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |text|text|null: false|
 |user_id|references|null: false, foreign_key: true|
 |post_id|references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to :post
+
+
+## roomsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|
+
+### Association
+- belongs_to :user
+- belongs_to :post
+
+
+## entriesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false, foreign_key: true|
+|room_id|references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to :post
+
+
+## messagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false, foreign_key: true|
+|room_id|references|null: false, foreign_key: true|
+|content|text|
 
 ### Association
 - belongs_to :user
