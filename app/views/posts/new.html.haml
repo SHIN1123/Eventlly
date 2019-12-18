@@ -11,8 +11,11 @@
           .new-event-form-box
             = "開催日"
             != sprintf(f.date_select(:date, use_month_numbers: true, prompt:"--", date_separator: '%s', start_year: Time.now.year, end_year: 2020), '年','月') + '日'
-            = f.text_field :genre, placeholder: "ジャンルを入力して下さい" 
-            = f.text_field :area, placeholder: "都道府県を入力して下さい" 
+            %br/
+            = "ジャンル"
+            = f.collection_select :genre_id, Genre.all, :id, :name, prompt: "--"
+            = "都道府県"
+            = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "--"
             = f.text_field :place, placeholder: "場所を入力して下さい" 
             = f.text_field :title, placeholder: "タイトルを入力して下さい" 
           .new-event-form-explanation

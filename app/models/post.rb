@@ -1,11 +1,15 @@
 class Post < ApplicationRecord
-  validates :title, :genre, :date, :area, presence: true
+  validates :title, :date, presence: true
   belongs_to :user
   has_many :comments
 
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :prefecture
+  belongs_to_active_hash :genre
+
   def self.search(search)
     if search
-      Post.where(['title LIKE ? OR area LIKE ? OR place LIKE ? OR genre LIKE ? OR explanation LIKE ?', "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%"])
+      Post.where(['title LIKE ? OR place LIKE ? OR explanation LIKE ? OR prefecture_id LIKE ? OR genre_id LIKE ? OR genre_id LIKE ?', "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%"])
     else
       Post.all
     end

@@ -7,11 +7,11 @@
             %i.fa.fa-calendar
               = post.date
           .event-genre
-            = post.genre
+            = post.genre.name
         .event-header-right
           .event-area
             %i.fa.fa-map-marker
-              = post.area
+              = post.prefecture.name
       .event-body
         .event-title
           =link_to post.title, post_path(post.id)

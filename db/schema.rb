@@ -44,9 +44,9 @@ ActiveRecord::Schema.define(version: 2019_11_18_054150) do
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
     t.date "date", null: false
-    t.string "area", null: false
+    t.integer "prefecture_id", null: false
     t.string "place"
-    t.string "genre"
+    t.integer "genre_id"
     t.text "explanation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

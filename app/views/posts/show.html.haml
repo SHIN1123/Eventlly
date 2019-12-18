@@ -22,10 +22,10 @@
             = @post.date
         .event-detail-top-content#genre
           .event-detail-top-content#genre-box
-            = @post.genre
+            = @post.genre.name
         .event-detail-top-content#area
           %i.fa.fa-map-marker
-            = @post.area
+            = @post.prefecture.name
             = @post.place
         .event-detail-top-content#explanation
           %i.fa.fa-comment-o
