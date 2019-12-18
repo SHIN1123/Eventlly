@@ -6,6 +6,11 @@
       .search-box
         = f.label :label, "フリーワード"
         = f.text_field :keyword, class: 'form-text', placeholder: 'キーワードを入力して下さい'
+        -# %br/
+        -# != sprintf(f.date_select(:date, use_month_numbers: true, prompt:"--", date_separator: '%s', start_year: Time.now.year, end_year: 2020), '年','月') + '日'
+        -# %br/
+        -# = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "--"
+        -# = f.collection_select :genre_id, Genre.all, :id, :name, prompt: "--"
       .search-btn
         = f.submit 'この条件で検索する', class: 'form-submit'
 
