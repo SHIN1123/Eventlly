@@ -1,6 +1,7 @@
 .event-detail{
   width: 100%;
   padding-top: 80px;
+  color: white;
   .event-detail-option{
     padding-top: 30px;
     margin-right: 40px;
@@ -25,7 +26,7 @@
       text-align: center;
       margin-top: 60px;
       font-size: 30px;
-      border-bottom: 3px solid #000;
+      border-bottom: 3px solid white;
     }
     .event-detail-top{
       padding-top: 20px;
@@ -50,7 +51,7 @@
       padding-bottom: 80px;
       .event-comments-logo{
         font-size: 30px;
-        border-bottom: 3px solid #000;
+        border-bottom: 3px solid white;
         text-align: center;
       }
       .event-comment-form{
