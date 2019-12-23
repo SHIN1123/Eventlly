@@ -75,16 +75,24 @@
         margin-top: 40px;
         font-size: 20px;
         .event-comment-flame{
-          padding-left: 10px;
-          background-color: rgba(3, 185, 185, 0.6);
+          padding: 5px 10px;
+
           .event-comment-header{
             .event-comment-user-name{
               float: left;
-              padding-right: 50px;
+            }
+            .event-comment-date{
+              float: right;
             }
           }
         }
       }
     }
   }
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
 }
