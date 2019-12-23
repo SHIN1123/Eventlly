@@ -17,20 +17,12 @@
       = link_to "ユーザー一覧へ", users_path
 
   .page-user-name
-    = @name
+    = @user.name
     = "さんの投稿一覧"
-    %br/
-    .user-image
-      = image_tag @user.image.url
-    = @user.introduce
   .main-page
-    - if @user.id == current_user.id 
-      %ul
-        -# %li
-        -#   = link_to "削除", post_path(@post.id), method: :delete
-        %li
-          = link_to "編集", edit_user_path(@user.id)
-    .main-contents
-      = render "shared/event-boxes"
+    = form_for @user do |f|
+      = f.file_field :image
+      = f.text_field :introduce
+      = f.submit '編集する'
 
 
