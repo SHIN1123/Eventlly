@@ -21,6 +21,8 @@
     .user-image
       - if @user.image.url != nil
         = image_tag @user.image.url
+      - else
+        = image_tag "default.jpg"
   .page-user-introduce
     .page-user-introduce-title
       = "プロフィール"
