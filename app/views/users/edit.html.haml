@@ -4,25 +4,21 @@
 
   .event-detail
     .event-detail-option
-      - if @user.id == current_user.id
-      - else
-        - if @isRoom == true
-          %p
-            %a{href: "/rooms/#{@roomId}"} dm画面へ
-        - else
-          = form_for @room do |f|
-            = fields_for @entry do |e|
-              = e.hidden_field :user_id, value: @user.id
-            = f.submit "dmを送る"
       = link_to "ユーザー一覧へ", users_path
 
   .page-user-name
     = @user.name
-    = "さんの投稿一覧"
-  .main-page
+    = "さんのマイページ"
+    .user-image
+      - if @user.image.url != nil
+        = image_tag @user.image.url
+  .edit-user
     = form_for @user do |f|
-      = f.file_field :image
-      = f.text_field :introduce
-      = f.submit '編集する'
+      .edit-user-image
+        = f.file_field :image
+      .edit-user-introduce
+        = f.text_area :introduce
+      .edit-user-submit
+        = f.submit '編集する'
 
 
