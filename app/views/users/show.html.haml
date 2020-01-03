@@ -22,7 +22,10 @@
       - if @user.image.url != nil
         = image_tag @user.image.url
   .page-user-introduce
-    = @user.introduce
+    .page-user-introduce-title
+      = "プロフィール"
+    .page-user-introduce-text
+      = @user.introduce
   .mypage-detail
     .mypage-detail-option
       - if @user.id == current_user.id 

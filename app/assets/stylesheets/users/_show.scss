@@ -43,9 +43,17 @@
 .page-user-introduce{
   width: 70%;
   margin: 0 auto;
-  background-color: rgba(216, 226, 226, 0.6);
-  height: 200px;
-  padding: 10px;
+  .page-user-introduce-title{
+    margin: 30px 0 10px 0;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+  }
+  .page-user-introduce-text{
+    background-color: rgba(216, 226, 226, 0.6);
+    height: 200px;
+    padding: 10px;
+  }
 }
 
 img {
