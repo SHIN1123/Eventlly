@@ -1,12 +1,38 @@
-.event-detail-option{
-  form{
-    input{
-      width: 100px;
+.user-detail{
+  width: 100%;
+  padding-top: 80px;
+  color: white;
+  .user-detail-option{
+    padding-top: 30px;
+    margin-right: 40px;
+    text-align: right;
+    form{
+      input{
+        width: 100px;
+      }
+      margin-bottom: 10px;
     }
-    margin-bottom: 10px;
   }
 }
 
+.mypage-detail{
+  margin-top: 50px;
+  text-align: center;
+  position: relative;
+  .mypage-detail-option{
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    margin: auto;
+    width: 120px;
+    border:1px solid white;
+    border-radius: 7.5px;
+    line-height: 40px;
+    height: 40px;
+  }
+}
 
 .page-user-name{
   text-align: center;
@@ -14,8 +40,16 @@
   color: white;
 }
 
+.page-user-introduce{
+  width: 70%;
+  margin: 0 auto;
+  background-color: rgba(216, 226, 226, 0.6);
+  height: 200px;
+  padding: 10px;
+}
+
 img {
-  border: 3px solid #a4a4a4;
+  border: 1px solid white;
   border-radius: 50%;
   height: 170px;
   width: 170px;

@@ -2,8 +2,8 @@
 
   = render "shared/header"
 
-  .event-detail
-    .event-detail-option
+  .user-detail
+    .user-detail-option
       - if @user.id == current_user.id
       - else
         - if @isRoom == true
@@ -15,21 +15,21 @@
               = e.hidden_field :user_id, value: @user.id
             = f.submit "dmを送る"
       = link_to "ユーザー一覧へ", users_path
-
   .page-user-name
     = @name
-    = "さんの投稿一覧"
-    %br/
+    = "さんのマイページ"
     .user-image
-      = image_tag @user.image.url
+      - if @user.image.url != nil
+        = image_tag @user.image.url
+  .page-user-introduce
     = @user.introduce
+  .mypage-detail
+    .mypage-detail-option
+      - if @user.id == current_user.id 
+        = link_to "編集", edit_user_path(@user.id)
   .main-page
-    - if @user.id == current_user.id 
-      %ul
-        -# %li
-        -#   = link_to "削除", post_path(@post.id), method: :delete
-        %li
-          = link_to "編集", edit_user_path(@user.id)
+    .main-page-title
+      = "投稿一覧"
     .main-contents
       = render "shared/event-boxes"
 

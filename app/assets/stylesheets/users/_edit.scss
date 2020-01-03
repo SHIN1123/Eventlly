@@ -1,0 +1,23 @@
+.edit-user{
+  margin-top: 30px;
+  text-align: center;
+  .edit-user-image{
+  }
+  .edit-user-introduce{
+    margin-top: 30px;
+    textarea{
+      width: 40%;
+      height: 200px;
+      resize: none;
+      padding: 5px;
+    }
+  }
+  .edit-user-submit{
+    input{
+      margin-top: 30px;
+      background-color: #03b9d1;
+      width: 40%;
+      height: 50px;
+    }
+  }
+}
